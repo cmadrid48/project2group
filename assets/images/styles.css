@@ -1,0 +1,183 @@
+/* color scememememe */
+:root {
+    --outer-space: #33393f;
+    --bright-turquise: #2aefcb;
+    --gin: #e0eae4;
+    --helictrope: #e866ec;
+}
+
+/* content highlight color and back ground*/
+::selection {
+    background-color: var(--bright-turquise);
+    color: var(--outer-space);
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.75rem;
+    line-height: 1.5rem;
+    color: var(--gin);
+    background-color: var(--outer-space);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-bottom: 0.625rem;
+    color: var(--helictrope);
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3.5rem;
+}
+
+h3 {
+    font-size: 3rem;
+}
+
+h4 {
+    font-size: 3rem;
+}
+
+h5 {
+    font-size: 2rem;
+}
+
+h6 {
+    font-size: 1.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+code {
+    font-family: consolas, Arial, Helvetica, sans-serif, monospace;
+}
+
+header {
+    width: 96%;
+    margin: 0 auto;
+    padding: 2.5rem;
+    text-align: center;
+    
+}
+
+header h1.page-title {
+    padding: 1rem 1.2rem;
+    font-size: 4.5rem;
+}
+
+main {
+    width: 96%;
+    margin: 2rem auto;
+}
+
+footer {
+    margin: 1.5rem;
+    text-align: center;
+}
+
+.row {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.card-column {
+    flex: 1 0 100%;
+    padding: 1.5rem;
+    transition: flex-basis 500ms linear;
+    margin-bottom: 1.5rem;
+}
+
+.code-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 100%;
+    padding: 2rem;
+    color: var(--helictrope);
+/* swaggggggggg */
+    outline: 4px dotted var(--gin);
+    outline-offset: -2px;
+    transition: all 0.5s ease-in-out;
+}
+
+/* set an outer and inner drop shadow on the card to create a glowing effect on hover */
+.code-card:hover,
+.code-card:hover .card-header {
+    box-shadow: inset 0px 0px 8px var(--helictrope), 0 0 15px var(--helictrope);
+}
+
+.code-card .code-block {
+    flex-grow: 1;
+}
+
+.code-card pre {
+    /* set styles to make it so code wraps in <pre> instead of overflowing */
+    white-space: pre-wrap;
+    overflow: auto;
+    tab-size: 4;
+    padding: 1.2rem 1rem;
+    color: var(--gin);
+    border-radius: 8px;
+    /* use linear-gradient() function to create a fading background  */
+    background-image: linear-gradient(
+      rgba(232, 102, 236, 0.3) 0%,
+      rgba(232, 102, 236, 0.6) 100%
+    );
+    display: flex;
+    align-items: center;
+  }
+  
+  /* on <pre> click, select all contents so the code is highlighted */
+  .code-card pre:active {
+    user-select: all;
+  }
+  
+  /* using a mobile-first approach, use `min-width` values going from narrow -> wide for a responsive design */
+  @media screen and (min-width: 768px) {
+    /* on tablets, set columns to only be 50% of the width and not grow */
+    .card-column {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+  
+    /* select the last child to grow to full width if it has space to grow */
+    .card-column:last-child {
+      flex-grow: 1;
+    }
+  }
+  
+  /* media query for larger screens */
+  @media screen and (min-width: 992px) {
+    header {
+      width: 75%;
+    }
+  
+    .card-column {
+      flex: 0 0 33.333%;
+      max-width: 33.333%;
+    }
+  }
+  
